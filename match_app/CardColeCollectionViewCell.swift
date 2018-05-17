@@ -10,4 +10,10 @@ import UIKit
 
 class CardColeCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var frontImageview: UIImageView!
+    
+    @IBOutlet weak var backImageViw: UIImageView!
+    
+    
 }
