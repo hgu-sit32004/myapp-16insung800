@@ -28,7 +28,7 @@ class CardModel {
             var cardOne = Card()
             cardOne.imageName = "card\(randomNumber)"
             
-            
+            // Add the created card
             generatedCardArray.append(cardOne)
             
             // Create the second card object
