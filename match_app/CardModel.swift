@@ -25,7 +25,7 @@ class CardModel {
             print(randomNumber)
             
             // Create the first card object
-            var cardOne = Card()
+            let cardOne = Card()
             cardOne.imageName = "card\(randomNumber)"
             
             // Add the created card
