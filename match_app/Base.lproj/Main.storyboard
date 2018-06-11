@@ -21,11 +21,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="54u-47-Sxz">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-eH-sHk">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-eH-sHk">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c96-gs-PP9">
-                                        <rect key="frame" x="0.0" y="0.0" width="667" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c96-gs-PP9" userLabel="timeLabel">
+                                        <rect key="frame" x="238.5" y="0.0" width="190" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="190" id="XyH-fu-4Gb"/>
                                             <constraint firstAttribute="height" constant="30" id="unl-fd-v0w"/>
@@ -52,10 +52,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card1" translatesAutoresizingMaskIntoConstraints="NO" id="TN9-jf-qoI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="158" height="203.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="158" height="233.5"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="Xdi-y6-ehF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="158" height="203.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="158" height="233.5"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
@@ -78,6 +78,9 @@
                                         </cells>
                                     </collectionView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="UhU-7k-uiF" firstAttribute="width" secondItem="Xdt-eH-sHk" secondAttribute="width" id="A6r-JE-Zfx"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -95,6 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="CollectionView" destination="UhU-7k-uiF" id="5Oh-Ck-r7e"/>
+                        <outlet property="timeLabel" destination="c96-gs-PP9" id="aiy-9W-vqW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
