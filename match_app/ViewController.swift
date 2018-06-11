@@ -10,12 +10,17 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var timeLabel: UILabel!
+    
     @IBOutlet weak var CollectionView: UICollectionView!
     
     var model = CardModel()
     var cardArray = [Card]()
     
     var firstFlippedCardIndex:IndexPath?
+    
+    var timer:Timer?
+    var millisecond:Float = 10 * 1000 // 10 seconds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +30,32 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         CollectionView.delegate = self
         CollectionView.dataSource = self
+        
+        // Create timer
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Timer Methods
+    
+    @objc func timerElapsed(){
+        
+        millisecond -= 1
+        
+        //Convert to seconds
+        let seconds = String(format: "%.2f", millisecond/1000)
+        
+        // Set label
+        timeLabel.text = "Time Remaining: \(seconds)"
+        
+        // When the timer has reached 0...
+        if millisecond <= 0 {
+            timer?.invalidate()
+        }
     }
 
     // MARK: -UICollectionviw Protocol Methods
